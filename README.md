@@ -21,20 +21,6 @@ Ouvrez simplement `index.html` dans un navigateur, ou lancez un petit serveur :
 python3 -m http.server 8080   # puis ouvrez http://localhost:8080
 ```
 
-## Mettre en ligne (hébergement statique gratuit)
-
-Il suffit d’envoyer le dossier tel quel, **sans commande de build** :
-
-- **Netlify** : glissez-déposez le dossier sur https://app.netlify.com/drop
-- **GitHub Pages** : créez un dépôt, envoyez les 3 fichiers, puis *Settings → Pages → Deploy from a branch → main / (root)*
-- **Cloudflare Pages** ou **Vercel** : importez le dépôt ; framework « None », dossier de sortie `/` (racine)
-- **Firebase Hosting** : `firebase init hosting` (dossier public = ce dossier), puis `firebase deploy`
-
-Conseils :
-- Utilisez **HTTPS** (fourni par tous les services ci-dessus) : il est nécessaire pour le plein écran et le verrouillage de l’orientation sur mobile.
-- Pour fonctionner **sans dépendance externe**, téléchargez `three.min.js` (r128) dans un dossier `lib/` et remplacez l’URL du CDN dans `index.html` par `lib/three.min.js`.
-- Les réglages et le record sont enregistrés dans le navigateur (`localStorage`), propres à chaque appareil et à chaque adresse.
-
 ## Où modifier quoi (dans `game.js`)
 
 | Pour changer… | Cherchez |
