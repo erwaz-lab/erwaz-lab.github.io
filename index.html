@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Nuit de l’horreur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <!-- Interface en jeu : vie, infos, arme, viseur, bannières, boss, flash de dégâts -->
+  <div id="hud">
+    <div id="hp"><i></i></div>
+    <div id="info"></div>
+    <div id="wp"></div>
+    <div id="cx"><i></i><i></i><i></i><i></i><u></u><b></b></div>
+    <div id="ts"></div>
+    <div id="bn"></div>
+    <div id="bb" style="display:none">
+      <div id="bbn"></div>
+      <i></i>
+    </div>
+    <div id="dm"></div>
+  </div>
+
+  <!-- Boutons fixes : contrôles tactiles ON/OFF et paramètres -->
+  <div id="tg">Tactile : ON</div>
+  <div id="gb">⚙ Paramètres</div>
+
+  <!-- Boîte de dialogue (style RPG) -->
+  <div id="dl" style="display:none">
+    <div id="dp"></div>
+    <div id="dn"></div>
+    <div id="dt"></div>
+    <span id="dk">▼</span>
+    <button id="ds">Passer ⏭</button>
+  </div>
+
+  <!-- Écran des paramètres -->
+  <div class="ov" id="cf" style="display:none"></div>
+
+  <!-- Boutons tactiles (tir, arme, recharger, viser, pouvoir) -->
+  <div class="b" id="f">TIR</div>
+  <div class="b" id="w">ARME</div>
+  <div class="b" id="r">RECH.</div>
+  <div class="b" id="a">VISER</div>
+  <div class="b" id="p">POUVOIR</div>
+
+  <!-- Boutique -->
+  <div class="ov" id="shop" style="display:none"></div>
+
+  <!-- Carte d’histoire (changement d’étape) -->
+  <div class="ov" id="sty" style="display:none">
+    <h1 id="st1"></h1>
+    <p id="st2"></p>
+    <button id="st3">Continuer</button>
+  </div>
+
+  <!-- Menu principal -->
+  <div class="ov" id="menu">
+    <h1 id="t">🎃 Nuit de l’horreur</h1>
+    <p>Survivez à la horde : citrouilles maléfiques, zombies, squelettes, fantômes, chauves-souris et loups-garous. Vingt armes, une arène fermée par des murs géants, au relief et au décor générés à chaque partie, avec des grottes et des bâtiments à explorer, des vagues de plus en plus dures. Ramassez les munitions et les soins lâchés par les monstres.</p>
+    <p><b>Clavier AZERTY</b> : ZQSD pour bouger · souris ou flèches pour viser · clic ou Espace pour tirer (on peut viser en tirant) · R recharger · clic droit ou Maj viser · A / E, molette ou 1 à 6 pour changer d’arme</p>
+    <p><b>Manette Xbox</b> : stick gauche bouger · stick droit viser · RT tirer · X recharger · LT viser · LB / RB armes · Start pour jouer</p>
+    <p><b>Tactile</b> : glissez à gauche pour bouger, à droite (ou depuis TIR) pour viser en tirant · RECH. recharger · VISER épauler · bouton « Tactile » en haut pour activer ou couper ces contrôles</p>
+    <p>Léa, votre petite sœur, a été enlevée par le Roi-Citrouille. Traversez 5 étapes de 10 niveaux, chacune dans un domaine maudit, pour la libérer. Gagnez des médailles citrouilles 🎃 en tuant les monstres, puis achetez armes et pouvoirs dans la boutique après chaque niveau (touche F ou bouton POUVOIR pour les pouvoirs actifs).</p>
+    <p id="msg"></p>
+    <button id="go">JOUER</button>
+  </div>
+
+  <!-- Invite à tourner le téléphone en paysage -->
+  <div class="ov" id="rot">
+    <h1>↻</h1>
+    <p>Tournez votre téléphone en mode paysage</p>
+  </div>
+
+  <!-- three.js (moteur 3D). Pour héberger sans dépendance externe, téléchargez ce fichier
+       dans le dossier lib/ et changez le chemin : lib/three.min.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Logique du jeu -->
+  <script src="game.js"></script>
+</body>
+</html>
